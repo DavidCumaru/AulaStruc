@@ -50,7 +50,7 @@ public class InitProfessor implements ApplicationListener<ContextRefreshedEvent>
 		System.out.println(prof4.getNome());
 		
 		//deleção por id
-		professorService.deletarPorId(2);
+		//professorService.deletarPorId(2);
 	
 		//Atualizar por id
 		//aluno1.setNome("Carlos");
@@ -58,11 +58,11 @@ public class InitProfessor implements ApplicationListener<ContextRefreshedEvent>
 		//
 		//System.out.println("Teste Atualização: " + aluno1.getNome());
 		
-		Professor professorAlterado = new Professor();
-		professorAlterado.setId(1);
-		professorAlterado.setNome("Anderson");
+		//Professor professorAlterado = new Professor();
+		//professorAlterado.setId(1);
+		//professorAlterado.setNome("Anderson");
 		
-		professorService.salvarAlteracao(professorAlterado);
+		//professorService.salvarAlteracao(professorAlterado);
 		
 		
 	}

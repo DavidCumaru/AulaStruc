@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Curso {
@@ -16,9 +17,17 @@ public class Curso {
 	@Column
 	private String nome;
 	
+	@OneToOne
+	private Professor professor;
 	
-	//private List<Aluno> aluno;
-	
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
 
 	public Integer getId() {
 		return id;
