@@ -9,9 +9,12 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import br.com.senac.entity.Aluno;
+import br.com.senac.entity.AlunoCurso;
+import br.com.senac.entity.Avaliacao;
 import br.com.senac.entity.Curso;
 import br.com.senac.entity.Turma;
 import br.com.senac.service.AlunoService;
+import br.com.senac.service.AvaliacaoService;
 import br.com.senac.service.CursoService;
 import br.com.senac.service.TurmaService;
 
@@ -29,6 +32,9 @@ public class InitAluno implements ApplicationListener<ContextRefreshedEvent>{
 	
 	@Autowired
 	private CursoService cursoService;
+	
+	@Autowired
+	private AvaliacaoService avaliacaoService;
 	
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -126,6 +132,16 @@ public class InitAluno implements ApplicationListener<ContextRefreshedEvent>{
 //		
 //		alunoService.salvarAlteracao(alunoAlterado);
 		
+		Avaliacao avaliacao1 = new Avaliacao();
+		
+		AlunoCurso alunoCurso1 = new AlunoCurso();
+		alunoCurso1.setAluno(aluno1);
+		alunoCurso1.setCurso(c4);
+		
+		avaliacao1.setAlunoCurso(alunoCurso1);
+		avaliacao1.setConceito("I");
+		
+		avaliacaoService.save(avaliacao1);
 		
 	}
 
